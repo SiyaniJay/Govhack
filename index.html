@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education, Employment, and Wellbeing in ACT</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .explanation {
+            background-color: #f9f9f9;
+            border-left: 5px solid #2c3e50;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Education, Employment, and Wellbeing in ACT</h1>
+        <p>In the ACT, while Year 12 completion rates are high at 94%, only 57% of students go on to pursue tertiary education. This gap between finishing high school and advancing to higher education limits employment opportunities and contributes to higher unemployment and underemployment. Our goal is to bridge this gap by increasing access to tertiary education and skills training, improving job prospects and overall wellbeing in the community. This project explores the data behind this issue and proposes solutions to create better outcomes for students and the workforce.</p>
+        <h2>Understanding the Impact of Education on Wellbeing</h2>
+        <p>Education plays a critical role in shaping an individual's career and overall wellbeing. In the ACT, we observe a direct correlation between improved education levels and better employment outcomes. The trends show that as Year 12 completion and tertiary enrollment increase, unemployment rates decrease, and job satisfaction improves.</p>
+        <p>By analyzing the data from 2010 to 2021, we can see that government initiatives and educational reforms have made a significant positive impact on the ACT community. This analysis highlights the following points:</p>
+    </header>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'CurrentTrends')" id="defaultOpen">Current Trends</button>
+        <button class="tablinks" onclick="openTab(event, 'ProposedSolution')">Proposed Solution</button>
+    </div>
+
+    <div id="CurrentTrends" class="tabcontent">
+        <div class="grid">
+            <div>
+                <h3>Education Trends</h3>
+                <div class="chart-container">
+                    <canvas id="educationChart"></canvas>
+                </div>
+                <div class="explanation">
+                    <p>The steady rise in Year 12 completion rates from 85% in 2010 to 94% in 2021, alongside a rise in tertiary enrollment, showcases the impact of education reforms in the ACT. This upward trend predicts a continued improvement in employment and overall wellbeing.</p>
+                </div>
+            </div>
+            <div>
+                <h3>Employment Trends</h3>
+                <div class="chart-container">
+                    <canvas id="employmentChart"></canvas>
+                </div>
+                <div class="explanation">
+                    <p>Unemployment has decreased from 6.1% to 5.0%, while underemployment fell from 9.1% to 6.9%. These figures indicate that as more individuals attain higher education, their employability increases, resulting in a stronger job market.</p>
+                </div>
+            </div>
+            <div>
+                <h3>Job Satisfaction Trend</h3>
+                <div class="chart-container">
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+                <div class="explanation">
+                    <p>Job satisfaction has seen a steady rise, reaching 81% in 2021, reflecting how education-driven career advancements lead to more fulfilling roles and work environments.</p>
+                </div>
+            </div>
+            <div>
+                <h3>Education vs Employment (2021)</h3>
+                <div class="chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+                <div class="explanation">
+                    <p>In 2021, Year 12 completion was at 94%, tertiary enrollment at 57%, and unemployment at 5.0%. This comparison suggests that higher education levels are crucial for reducing unemployment and enhancing overall job satisfaction, reinforcing the link between education and employment outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ProposedSolution" class="tabcontent">
+        <h2>Proposed Solution: Enhanced Education and Skills Training</h2>
+        <p>We propose expanding tertiary education and vocational training programs to match industry needs, increasing employability and job satisfaction. This solution focuses on:</p>
+        <ul>
+            <li>Increasing access to tertiary education</li>
+            <li>Providing targeted skills training aligned with industry needs</li>
+            <li>Offering career counseling and job placement services</li>
+        </ul>
+        <p>The projected outcomes of this solution are illustrated in the chart below:</p>
+        <div class="chart-container">
+            <canvas id="solutionChart"></canvas>
+        </div>
+        <div class="explanation">
+            <p>By 2025, Year 12 completion is projected to reach 98%, with tertiary enrollment increasing to 65%. Unemployment is expected to decrease further to 4.2%, while job satisfaction improves to 85%, ultimately enhancing wellbeing in the ACT.</p>
+            <p>In this project, we utilized several key datasets to analyze the relationship between education, employment, and wellbeing in the ACT. The data provided valuable insights into the challenges and opportunities faced by the community. Below are the datasets and reports referenced throughout the project:</p>
+
+<ul>
+    <li><a href="https://profile.id.com.au/australia/education?WebID=250" target="_blank">Australian Community Profile - Education Dataset</a></li>
+    <li><a href="https://www.education.act.gov.au/__data/assets/pdf_file/0003/1993701/ACT-Schools-Census-February-2022.pdf" target="_blank">ACT Schools Census February 2022</a></li>
+    <li><a href="https://example.com" target="_blank">2018 Vital Signs Report</a></li>
+    <li><a href="https://ywca-canberra.org.au/wp-content/uploads/Our-Lives-Survey-Report-2023-1.pdf" target="_blank">Our Lives Survey Report 2023</a></li>
+</ul>
+
+<p>These datasets and reports formed the foundation of our analysis, helping us identify the gaps in education and employment and propose effective solutions to enhance community wellbeing.</p>
+
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            { year: 2010, completion: 85, enrollment: 45, unemployment: 6.1, underemployment: 9.1, satisfaction: 70 },
+            { year: 2011, completion: 86, enrollment: 46, unemployment: 6.0, underemployment: 9.0, satisfaction: 71 },
+            { year: 2012, completion: 87, enrollment: 47, unemployment: 5.9, underemployment: 8.8, satisfaction: 72 },
+            { year: 2013, completion: 88, enrollment: 48, unemployment: 5.8, underemployment: 8.7, satisfaction: 73 },
+            { year: 2014, completion: 89, enrollment: 49, unemployment: 5.7, underemployment: 8.6, satisfaction: 74 },
+            { year: 2015, completion: 90, enrollment: 50, unemployment: 5.6, underemployment: 8.4, satisfaction: 75 },
+            { year: 2016, completion: 91, enrollment: 51, unemployment: 5.5, underemployment: 8.2, satisfaction: 76 },
+            { year: 2017, completion: 91.5, enrollment: 52, unemployment: 5.3, underemployment: 8.1, satisfaction: 77 },
+            { year: 2018, completion: 90, enrollment: 50, unemployment: 5.8, underemployment: 8.3, satisfaction: 78 },
+            { year: 2019, completion: 92, enrollment: 52, unemployment: 4.8, underemployment: 7.7, satisfaction: 79 },
+            { year: 2020, completion: 91, enrollment: 55, unemployment: 5.4, underemployment: 7.2, satisfaction: 80 },
+            { year: 2021, completion: 94, enrollment: 57, unemployment: 5.0, underemployment: 6.9, satisfaction: 81 },
+        ];
+
+        const solutionData = [
+            { year: 2021, completion: 94, enrollment: 57, unemployment: 5.0, underemployment: 6.9, satisfaction: 81 },
+            { year: 2022, completion: 95, enrollment: 59, unemployment: 4.8, underemployment: 6.7, satisfaction: 82 },
+            { year: 2023, completion: 96, enrollment: 61, unemployment: 4.6, underemployment: 6.5, satisfaction: 83 },
+            { year: 2024, completion: 97, enrollment: 63, unemployment: 4.4, underemployment: 6.3, satisfaction: 84 },
+            { year: 2025, completion: 98, enrollment: 65, unemployment: 4.2, underemployment: 6.1, satisfaction: 85 },
+        ];
+
+        function createChart(canvasId, data, labels, datasets) {
+            return new Chart(document.getElementById(canvasId), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Education Trends Chart
+        createChart('educationChart', data, data.map(d => d.year), [
+            {
+                label: 'Year 12 Completion %',
+                data: data.map(d => d.completion),
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Tertiary Enrollment %',
+                data: data.map(d => d.enrollment),
+                borderColor: 'rgb(255, 99, 132)',
+                tension: 0.1
+            }
+        ]);
+
+        // Employment Trends Chart
+        createChart('employmentChart', data, data.map(d => d.year), [
+            {
+                label: 'Unemployment %',
+                data: data.map(d => d.unemployment),
+                borderColor: 'rgb(54, 162, 235)',
+                tension: 0.1
+            },
+            {
+                label: 'Underemployment %',
+                data: data.map(d => d.underemployment),
+                borderColor: 'rgb(255, 206, 86)',
+                tension: 0.1
+            }
+        ]);
+
+        // Job Satisfaction Trend Chart
+        createChart('satisfactionChart', data, data.map(d => d.year), [
+            {
+                label: 'Job Satisfaction %',
+                data: data.map(d => d.satisfaction),
+                borderColor: 'rgb(153, 102, 255)',
+                tension: 0.1
+            }
+        ]);
+
+        // Education vs Employment Comparison Chart (2021)
+        new Chart(document.getElementById('comparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Year 12 Completion', 'Tertiary Enrollment', 'Unemployment'],
+                datasets: [{
+                    label: '2021 Percentages',
+                    data: [data[data.length - 1].completion, data[data.length - 1].enrollment, data[data.length - 1].unemployment],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgb(75, 192, 192)',
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Proposed Solution Chart
+        createChart('solutionChart', solutionData, solutionData.map(d => d.year), [
+            {
+                label: 'Year 12 Completion %',
+                data: solutionData.map(d => d.completion),
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Tertiary Enrollment %',
+                data: solutionData.map(d => d.enrollment),
+                borderColor: 'rgb(255, 99, 132)',
+                tension: 0.1
+            },
+            {
+                label: 'Unemployment %',
+                data: solutionData.map(d => d.unemployment),
+                borderColor: 'rgb(54, 162, 235)',
+                tension: 0.1
+            },
+            {
+                label: 'Job Satisfaction %',
+                data: solutionData.map(d => d.satisfaction),
+                borderColor: 'rgb(153, 102, 255)',
+                tension: 0.1
+            }
+        ]);
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
